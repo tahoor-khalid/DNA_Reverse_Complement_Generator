@@ -1,3 +1,7 @@
+from Bio import SeqIO
+record = SeqIO.read("blaTEM_sequence.fasta", "fasta") #Read the fasta file
+sequence = str(record.seq)
+
 def reverse_complement(sequence): #Defining a function
     complements = {"A":"T","T":"A","G":"C","C":"G"} #Defining complementary bases
     complementary_sequence = ""
@@ -6,7 +10,7 @@ def reverse_complement(sequence): #Defining a function
         complementary_sequence += complement #Joning the bases in complementary sequence
     rev_comp = complementary_sequence[::-1] #Reversing the sequence
     return(sequence, complementary_sequence, rev_comp) 
-sequence = "ATCGGATCGTACGTGGCCCTTAGTGCTGCT" 
+# sequence = "ATCGGATCGTACGTGGCCCTTAGTGCTGCT" 
 sequence, complementary_sequence, rev_comp = reverse_complement(sequence)
 print(f"Original DNA sequence: {sequence}")
 print(f"Complementary_sequence: {complementary_sequence}")

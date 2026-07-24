@@ -1,5 +1,5 @@
 from Bio import SeqIO
-record = SeqIO.read("sequence.fasta", "fasta") #Read the fasta file
+record = SeqIO.read("blaTEM_sequence.fasta", "fasta") #Read the fasta file
 sequence = record.seq  #Extract the DNA equence
 reverse = sequence.reverse_complement() #Generate the reverse complement
 
